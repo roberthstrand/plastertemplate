@@ -1,1 +1,1 @@
-# <%= $PLASTER_PARAM_ModuleName %>
+# PlasterTemplate
