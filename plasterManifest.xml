@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<plasterManifest
+  schemaVersion="1.1"
+  templateType="Item" xmlns="http://www.microsoft.com/schemas/PowerShell/Plaster/v1">
+  <metadata>
+    <name>plasterTemplate</name>
+    <id>6f821e08-7a04-4449-86b2-845b64f9e286</id>
+    <version>0.0.1</version>
+    <title>plasterTemplate</title>
+    <description></description>
+    <author>Roberth Strand</author>
+    <tags></tags>
+  </metadata>
+  <parameters>
+    <parameter name="ModuleName" type="text" prompt="Name of your module" />
+    <parameter name="ModuleDesc" type="text" prompt="Brief description on this module" />
+
+  </parameters>
+  <content>
+    <message>Creating files for your module, $PLASTER_PARAM_ModuleName</message>
+    <file source="" destination="docs"/>
+    <file
+      source="LICENSE"
+      destination="LICENSE" />
+    <file
+      source="README.md"
+      destination="README.md" />
+    <newModuleManifest destination='${PLASTER_PARAM_ModuleName}.psd1' 
+        moduleVersion='$PLASTER_PARAM_ModuleVersion'
+        rootModule='${PLASTER_PARAM_ModuleName}.psm1' 
+        author='$PLASTER_PARAM_ModuleAuthor'
+        companyName='destruktive.one'
+        description='$PLASTER_PARAM_ModuleDesc'/>
+    <file source='template.psm1' destination='${PLASTER_PARAM_ModuleName}.psm1'/>
+  </content>
+</plasterManifest>
